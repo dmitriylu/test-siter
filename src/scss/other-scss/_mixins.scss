@@ -1,0 +1,55 @@
+
+
+@mixin flex ($content, $items, $direction: row) {
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+    flex-direction: $direction;
+}
+
+@mixin font ($famaly, $size, $weight) {
+    font-family: $famaly;
+    font-size: $size + px;
+    font-weight: $weight;
+}
+@mixin text($color, $line-height, $spacing: 0em) {
+    color: $color;
+    line-height: $line-height;
+    letter-spacing: $spacing;
+}
+
+@mixin position ($position, $left, $top, $x, $y) {
+    position: $position;
+    left: $left;
+    top: $top;
+    transform: translate($x, $y);
+}
+@mixin cover($color){
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color;
+}
+@mixin backgound($url){
+    background: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+    
+@mixin link($color,$hover,$active) {
+    a {
+        color: $color;
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+    }
+}
+    

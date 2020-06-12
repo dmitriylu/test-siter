@@ -1,0 +1,88 @@
+
+html {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    @include font ($font-primary,16,400);
+    .container {
+        width: 100%;
+        max-width: 1430px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    h2 {
+        @include font ($font-primary,50,900);
+        text-transform: capitalize;  
+        letter-spacing: 0.01em; 
+    }
+    h3 {
+        @include font ($font-primary,30,900);
+        display: inline-block;
+        text-transform: capitalize;  
+    }
+//     h1, h2, h3, h4, h5, h6 {}
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        @include font($font-primary,20,800);
+        @include text(#000000,1.4em);
+    }
+    p {
+        @include text(#000000,1.5em);
+        @include font ($font-secondary,16,300);
+    }
+    .btn {
+        @include font($font-primary,24,700);
+        color: #ffffff;
+        background: $color-pimary;
+        border: none;
+        padding: 24px 123px;
+        text-transform: capitalize;
+        transition: all ease-in 0.3s;
+        cursor: pointer;
+        box-shadow: 0px 18px 25.2px 2.8px rgba(255, 33, 59, 0.25);
+        &:hover {
+            background: #e21f36;
+        }
+    }
+    .section__title {
+        padding: 120px 0 60px;
+        text-align: center;
+    }
+    .position {
+        position: relative;
+    }
+    .top {
+        @include font ($font-primary,24,400);
+        @include text(#ffffff,1.625em);
+        text-transform: capitalize;
+        opacity: 0;
+        transition: .5s ease;
+        position: fixed;
+        z-index: 3;
+        right: 14%;
+        bottom: 30px;
+        transition: ease 1s;
+        background: $color-secondary;
+        padding: 10px 10px;
+        box-shadow: 0 0 10px rgba($color-secondary,0.5);
+        &:hover {
+            background: #0e3b6b;
+            box-shadow: none;
+        }
+    }
+    .hidden {
+        display: none;
+    }
+}
+
+  
+  

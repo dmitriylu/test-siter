@@ -1,0 +1,162 @@
+.header {
+    position: relative;
+    min-height: 950px;
+    z-index: 2;
+    background: url('../../build/img/bg/bg-header.jpg') no-repeat;
+    overflow-x: hidden;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #e9e9e9;
+        opacity: 0.84;
+        z-index: -1;
+    }
+    .header__top {
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .burger {
+            width: 35px;
+            order: 1;
+            display: none;
+            &__item {
+                transition: all 0.5s ease;
+                width: 100%;
+                height: 3px;
+                margin-bottom: 7px;
+                background: $color-pimary;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .burger.toggle .burger__item:nth-child(1) {
+            transform: translateY(12px) rotate(45deg);
+            transition: all .5s ease;
+        }
+        .burger.toggle .burger__item:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.toggle .burger__item:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            transition: all .5s ease;
+        }
+        .header__contact {
+            display: flex;
+            align-items: center;
+            // .header__phone,
+            // .header__btn {
+            // }
+            .header__phone {
+                margin-right: 36px;
+            }
+            .header__btn {
+                @include font($font-primary,24,700);
+                text-transform: capitalize;
+                // color: #ffffff;
+                margin-right: 16px;
+                padding: 16px 93px;
+                border: 2px solid $color-pimary;
+                border-radius: 100px;
+                transition: all ease-in 0.3s;
+                &:hover {
+                    background: $color-pimary;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .nav {
+        position: fixed;
+        z-index: 5;
+        transition: all 0.5s ease;
+        .menu {
+            display: flex;
+            &__item {
+              text-transform: capitalize;  
+            }
+            &__link {
+                padding: 44px 19px;
+                letter-spacing: 0.04em;
+                &:hover {
+                    background: $color-pimary;
+                    color: #ffffff;
+                    transition: all ease-in 0.3s;
+                }
+            }
+            &__link.active {
+                background: $color-pimary;
+                color: #ffffff;
+            }
+        }
+    }
+    .nav.red {
+        top: 0;
+        background: $color-secondary;
+        .menu {
+            &__item {
+            
+            }
+            &__link {
+                color: #ffffff;
+                padding: 15px 19px;
+            }
+        }
+    }
+    .header__content {
+        position: relative;
+        width: 100%;
+    }
+    .header__offer {
+        max-width: 751px;
+        // margin-top: 125px;
+        padding-top: 241px;
+    }
+    .header__title {
+        @include font($font-primary,80,900);
+        line-height: 1.125em;
+        .primary-color {
+            color: $color-pimary;
+        }
+    }
+    .header__text {
+        @include font ($font-secondary,24,400);
+    }
+    .header__form {
+        width: 100%;
+        max-width: 750px;
+        min-height: 850px;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 150px;
+        background: url('../../build/img/bg/bg-form.jpg') no-repeat;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #172c42;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        @import './form';
+      
+    }
+    
+}

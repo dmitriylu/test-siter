@@ -1,0 +1,80 @@
+.price {
+    &__cards {
+        display: flex;
+        justify-content: center;
+        .card {
+            max-width: 448px;
+            min-height: 485px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 0 45px;
+            margin-right: 50px;
+            margin-bottom: 70px;
+            position: relative;
+            box-shadow: 0px 0px 55.8px 4.2px rgba(0, 0, 0, 0.07);
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+            .card__header {
+                width: 100%;
+                background: $color-secondary;
+                padding: 26px 0;
+                text-align: center;
+            }
+            .card__title {
+                color: #ffffff;
+            }
+            .card__body {
+                // padding: 35px 37px 40px;
+                border-bottom: 2px solid #e2e2e2;
+                // flex: 1 0 auto;
+                flex: 1 1 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 10px 36px;
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 23px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .card__icon {
+                margin-right: 19px;        
+            }
+            .card__footer {
+                padding-top: 18px;
+            }
+            .card__prices {
+                &-old {
+                    @include font ($font-secondary,24,300);
+                    @include text($color-secondary,2.083em);
+                }
+                &-new {
+                    color: $color-secondary;
+                    span {
+                        @include font ($font-secondary,50,900);
+                    }
+                }
+            }
+            .card__btn {
+                position: absolute;
+                bottom: 0;
+                transform: translateY(50%);
+                box-shadow: 0px 13px 36.12px 6.88px rgba(255, 33, 59, 0.25);
+            }
+        }
+    }
+    &__text {
+        @include font($font-secondary,18,500);
+        padding: 0 5px;
+        text-align: center;
+        &-star {
+            color: $color-pimary;
+        }
+    }
+}
